@@ -8,7 +8,26 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+
+    // Auto-transition to light mode on first scroll
+    const hasTransitioned = localStorage.getItem("theme-auto-transition-complete");
+    
+    if (!hasTransitioned) {
+      const handleScroll = () => {
+        if (window.scrollY > 100) {
+          setTheme("light");
+          localStorage.setItem("theme-auto-transition-complete", "true");
+          window.removeEventListener("scroll", handleScroll);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [setTheme]);
 
   if (!mounted) return null;
 
