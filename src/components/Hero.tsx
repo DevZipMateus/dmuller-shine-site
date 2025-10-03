@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Lightbulb, Award, Zap } from "lucide-react";
+import { Award, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import lampadaAcesa from "@/assets/lampada-acesa.png";
+import lampadaApagada from "@/assets/lampada-apagada.png";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -32,12 +34,15 @@ const Hero = () => {
       
       {/* Lâmpada de fundo que responde ao tema */}
       {mounted && (
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none transition-all duration-700">
-          {theme === "light" ? (
-            <Lightbulb className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] text-yellow-400 drop-shadow-[0_0_100px_rgba(250,204,21,0.6)] animate-fade-in" />
-          ) : (
-            <Lightbulb className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] text-gray-600 opacity-30 animate-fade-in" />
-          )}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-700">
+          <img 
+            src={theme === "light" ? lampadaAcesa : lampadaApagada}
+            alt="Lâmpada"
+            className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] object-contain opacity-20 md:opacity-30 transition-all duration-700 animate-fade-in"
+            style={{
+              filter: theme === "light" ? "drop-shadow(0 0 60px rgba(250, 204, 21, 0.4))" : "none"
+            }}
+          />
         </div>
       )}
       
@@ -66,7 +71,7 @@ const Hero = () => {
           {/* Feature badges */}
           <div className="flex flex-wrap justify-center gap-4 pt-8">
             <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-border shadow-sm">
-              <Lightbulb className="w-5 h-5 text-primary" />
+              <Award className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium">Qualidade superior</span>
             </div>
             <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-border shadow-sm">
