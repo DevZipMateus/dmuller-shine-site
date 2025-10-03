@@ -1,12 +1,12 @@
 import { ToggleRight, ToggleLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { useScrollTheme } from "@/hooks/use-scroll-theme";
+import { useThemeScroll } from "@/contexts/ThemeScrollContext";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { enableManualControl } = useScrollTheme();
+  const { enableManualControl } = useThemeScroll();
 
   useEffect(() => {
     setMounted(true);
