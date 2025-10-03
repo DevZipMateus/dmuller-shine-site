@@ -22,12 +22,14 @@ export const useScrollTheme = () => {
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
       
-      // Switch to light when scrolling past the "bulb glass" area (around 50% of hero section)
-      const switchPoint = heroHeight * 0.5;
+      // Switch to light when scrolling past the "bulb glass" area (around 35% of hero section)
+      // This corresponds to when we pass the glass part of the lamp
+      const switchPoint = heroHeight * 0.35;
+      const buffer = 10; // Small buffer to prevent flickering
 
-      if (scrollPosition > switchPoint && theme === "dark") {
+      if (scrollPosition > switchPoint + buffer && theme === "dark") {
         setTheme("light");
-      } else if (scrollPosition <= switchPoint && theme === "light") {
+      } else if (scrollPosition < switchPoint - buffer && theme === "light") {
         setTheme("dark");
       }
     };

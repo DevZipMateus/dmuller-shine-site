@@ -6,8 +6,12 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ThemeToggle from "@/components/ThemeToggle";
+import { useScrollTheme } from "@/hooks/use-scroll-theme";
 
 const Index = () => {
+  // Enable automatic theme switching based on scroll position
+  useScrollTheme();
+  
   return (
     <div className="min-h-screen">
       <Header />
