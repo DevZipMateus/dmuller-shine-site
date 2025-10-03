@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Lightbulb, Award, Zap } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,6 +29,17 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+      
+      {/* Lâmpada de fundo que responde ao tema */}
+      {mounted && (
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none transition-all duration-700">
+          {theme === "light" ? (
+            <Lightbulb className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] text-yellow-400 drop-shadow-[0_0_100px_rgba(250,204,21,0.6)] animate-fade-in" />
+          ) : (
+            <Lightbulb className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] text-gray-600 opacity-30 animate-fade-in" />
+          )}
+        </div>
+      )}
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
