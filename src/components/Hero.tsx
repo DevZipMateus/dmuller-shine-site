@@ -20,7 +20,7 @@ const Hero = () => {
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        backgroundColor: theme === "light" ? '#f8f9fa' : '#000000',
+        backgroundColor: theme === "light" ? '#ffffff' : '#000000',
       }}
     >
 
