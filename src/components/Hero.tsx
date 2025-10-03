@@ -34,13 +34,13 @@ const Hero = () => {
       
       {/* Lâmpada de fundo que responde ao tema */}
       {mounted && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-700">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-700">
           <img 
             src={theme === "light" ? lampadaAcesa : lampadaApagada}
             alt="Lâmpada"
-            className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] object-contain opacity-20 md:opacity-30 transition-all duration-700 animate-fade-in"
+            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain opacity-50 md:opacity-60 rotate-180 transition-all duration-700 animate-fade-in mix-blend-screen"
             style={{
-              filter: theme === "light" ? "drop-shadow(0 0 60px rgba(250, 204, 21, 0.4))" : "none"
+              filter: theme === "light" ? "drop-shadow(0 0 60px rgba(250, 204, 21, 0.5))" : "none"
             }}
           />
         </div>
