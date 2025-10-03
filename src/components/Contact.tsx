@@ -39,9 +39,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <section id="contato" className="py-20 md:py-32 bg-background w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto w-full">
           {/* Section heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -53,9 +53,9 @@ const Contact = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 w-full">
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8 w-full">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Informações de contato</h3>
                 <p className="text-foreground/70 mb-8">
@@ -116,10 +116,10 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-secondary/30 p-8 rounded-2xl shadow-lg border border-border">
-              <h3 className="text-2xl font-semibold mb-6">Envie sua mensagem</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+            <div className="bg-secondary/30 p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-border w-full">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Envie sua mensagem</h3>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full">
+                <div className="w-full">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Nome completo
                   </label>
@@ -131,11 +131,11 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Seu nome"
-                    className="w-full"
+                    className="w-full max-w-full"
                   />
                 </div>
 
-                <div>
+                <div className="w-full">
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email
                   </label>
@@ -147,11 +147,11 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="seu@email.com"
-                    className="w-full"
+                    className="w-full max-w-full"
                   />
                 </div>
 
-                <div>
+                <div className="w-full">
                   <label htmlFor="phone" className="block text-sm font-medium mb-2">
                     Telefone
                   </label>
@@ -163,11 +163,11 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="(00) 00000-0000"
-                    className="w-full"
+                    className="w-full max-w-full"
                   />
                 </div>
 
-                <div>
+                <div className="w-full">
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Mensagem
                   </label>
@@ -179,11 +179,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Como podemos ajudar você?"
                     rows={5}
-                    className="w-full resize-none"
+                    className="w-full max-w-full resize-none"
                   />
                 </div>
 
-                <Button type="submit" variant="hero" size="lg" className="w-full">
+                <Button type="submit" variant="hero" size="lg" className="w-full max-w-full">
                   Enviar mensagem via WhatsApp
                 </Button>
               </form>
