@@ -50,26 +50,6 @@ const Hero = () => {
           Desde 2025, proporcionando o que há de melhor em qualidade de iluminação para transformar seus ambientes.
         </p>
       </div>
-
-      {/* Toggle button */}
-      <button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="relative z-10 px-8 py-4 text-lg font-bold rounded-full transition-all duration-300 hover:scale-105 mt-8"
-        style={{
-          border: '2px solid rgba(0, 0, 0, 0.5)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: '#fff',
-          backdropFilter: 'blur(5px)',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        }}
-      >
-        {theme === "light" ? "Apagar a Luz" : "Acender a Luz"}
-      </button>
     </section>
   );
 };

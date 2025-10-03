@@ -1,4 +1,4 @@
-import { Lightbulb, LightbulbOff } from "lucide-react";
+import { ToggleRight, ToggleLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -40,9 +40,9 @@ const ThemeToggle = () => {
       aria-label={isLight ? "Mudar para modo escuro" : "Mudar para modo claro"}
     >
       {isLight ? (
-        <Lightbulb className="w-7 h-7 text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]" />
+        <ToggleRight className="w-7 h-7 text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]" />
       ) : (
-        <LightbulbOff className="w-7 h-7 text-muted-foreground" />
+        <ToggleLeft className="w-7 h-7 text-muted-foreground" />
       )}
       <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         {isLight ? "Modo escuro" : "Modo claro"}
