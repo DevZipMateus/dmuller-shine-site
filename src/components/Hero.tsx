@@ -23,7 +23,7 @@ const Hero = () => {
       <div style={{
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       backdropFilter: 'blur(5px)'
-    }} className="relative z-10 text-center px-8 py-10 max-w-4xl mx-auto rounded-2xl bg-[#000a00]/[0.51]">
+    }} className="relative z-10 text-center px-8 py-10 max-w-4xl mx-auto rounded-2xl bg-[#000a00]/[0.27]">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
           D Muller Comércio
         </h1>
