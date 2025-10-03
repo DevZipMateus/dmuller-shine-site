@@ -35,38 +35,88 @@ const Hero = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-700">
           <svg 
             className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] rotate-180 transition-all duration-700 animate-fade-in"
-            viewBox="0 0 100 100" 
+            viewBox="0 0 100 120" 
             xmlns="http://www.w3.org/2000/svg"
             style={{
-              filter: theme === "light" ? "drop-shadow(0 0 40px rgba(255, 199, 0, 0.7))" : ""
+              filter: theme === "light" 
+                ? "drop-shadow(0 0 10px rgba(255, 199, 0, 0.4)) drop-shadow(0 0 20px rgba(255, 199, 0, 0.3)) drop-shadow(0 0 30px rgba(255, 199, 0, 0.2))"
+                : "drop-shadow(0 5px 10px rgba(0,0,0,0.3))"
             }}
           >
-            {/* Base da lâmpada */}
-            <g className="transition-all duration-500">
-              <rect x="38" y="70" width="24" height="4" rx="1" fill="#b0b0b0"/>
-              <rect x="36" y="74" width="28" height="4" rx="1" fill="#c0c0c0"/>
-              <rect x="38" y="78" width="24" height="4" rx="1" fill="#b0b0b0"/>
-              <rect x="36" y="82" width="28" height="4" rx="1" fill="#c0c0c0"/>
-              <path d="M40 86h20v4a2 2 0 0 1-2 2H42a2 2 0 0 1-2-2v-4z" fill="#444"/>
-            </g>
-            
-            {/* Bulbo da lâmpada */}
-            <g className="transition-all duration-500">
+            {/* Bulbo apagado (modo escuro) */}
+            <g 
+              className="transition-opacity duration-700"
+              style={{ opacity: theme === "light" ? 0 : 1 }}
+            >
               <path 
-                d="M50 0 C30 0 20 25 20 45 C20 65 35 70 50 70 C65 70 80 65 80 45 C80 25 70 0 50 0 Z" 
+                d="M50 10 C30 10 18 35 18 60 C18 80 30 90 50 90 C70 90 82 80 82 60 C82 35 70 10 50 10 Z" 
+                fill="rgba(25,25,25,0.7)" 
+                stroke="#666" 
+                strokeWidth="0.5"
+              />
+              <path 
+                d="M65 25 C60 20 40 20 35 25 L40 30 C45 25 55 25 60 30 Z" 
                 fill="rgba(255,255,255,0.1)"
+              />
+              <path 
+                d="M70 40 C65 35 45 35 40 40 L45 45 C50 40 60 40 65 45 Z" 
+                fill="rgba(255,255,255,0.05)"
+              />
+            </g>
+
+            {/* Bulbo aceso (modo claro) */}
+            <g 
+              className="transition-opacity duration-700"
+              style={{ opacity: theme === "light" ? 1 : 0 }}
+            >
+              <path 
+                d="M50 10 C30 10 18 35 18 60 C18 80 30 90 50 90 C70 90 82 80 82 60 C82 35 70 10 50 10 Z" 
+                fill="rgba(255,255,255,0.1)" 
+                stroke="#cccccc" 
+                strokeWidth="0.5"
+              />
+              <path 
+                d="M65 25 C60 20 40 20 35 25 L40 30 C45 25 55 25 60 30 Z" 
+                fill="rgba(255,255,255,0.4)"
+              />
+              <path 
+                d="M70 40 C65 35 45 35 40 40 L45 45 C50 40 60 40 65 45 Z" 
+                fill="rgba(255,255,255,0.2)"
+              />
+            </g>
+
+            {/* Filamento */}
+            <g className="transition-all duration-500">
+              <line 
+                x1="50" 
+                y1="65" 
+                x2="50" 
+                y2="72" 
+                stroke="#666" 
+                strokeWidth="0.8"
                 className="transition-all duration-500"
               />
               <path 
-                d="M45 50 C 48 55, 52 55, 55 50" 
-                stroke={theme === "light" ? "#ffc700" : "#555"}
-                strokeWidth="1.5" 
+                d="M45 72 C48 77, 52 77, 55 72" 
+                stroke={theme === "light" ? "#ffecb3" : "#666"}
+                strokeWidth={theme === "light" ? "2" : "1.5"}
                 fill="none"
                 className="transition-all duration-500"
                 style={{
-                  filter: theme === "light" ? "drop-shadow(0 0 3px #ffc700)" : ""
+                  filter: theme === "light" 
+                    ? "drop-shadow(0 0 5px #ffecb3) drop-shadow(0 0 10px rgba(255,199,0,0.5))" 
+                    : ""
                 }}
               />
+            </g>
+            
+            {/* Soquete */}
+            <g className="transition-all duration-500">
+              <rect x="38" y="90" width="24" height="4" rx="1" fill="#b0b0b0"/>
+              <rect x="36" y="94" width="28" height="4" rx="1" fill="#c0c0c0"/>
+              <rect x="38" y="98" width="24" height="4" rx="1" fill="#b0b0b0"/>
+              <rect x="36" y="102" width="28" height="4" rx="1" fill="#c0c0c0"/>
+              <path d="M40 106h20v4a2 2 0 0 1-2 2H42a2 2 0 0 1-2-2v-4z" fill="#444"/>
             </g>
           </svg>
         </div>
