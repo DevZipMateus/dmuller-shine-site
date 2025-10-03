@@ -1,41 +1,29 @@
 import { ToggleRight, ToggleLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useScrollTheme } from "@/hooks/use-scroll-theme";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { enableManualControl } = useScrollTheme();
 
   useEffect(() => {
     setMounted(true);
-
-    // Auto-transition to light mode on first scroll
-    const hasTransitioned = sessionStorage.getItem("theme-auto-transition-complete");
-    
-    if (!hasTransitioned) {
-      const handleScroll = () => {
-        if (window.scrollY > 100) {
-          setTheme("light");
-          sessionStorage.setItem("theme-auto-transition-complete", "true");
-          window.removeEventListener("scroll", handleScroll);
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll);
-      
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [setTheme]);
+  }, []);
 
   if (!mounted) return null;
 
   const isLight = theme === "light";
 
+  const handleToggle = () => {
+    setTheme(isLight ? "dark" : "light");
+    enableManualControl();
+  };
+
   return (
     <button
-      onClick={() => setTheme(isLight ? "dark" : "light")}
+      onClick={handleToggle}
       className="fixed bottom-24 right-6 z-40 bg-background/80 backdrop-blur-sm border border-border p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
       aria-label={isLight ? "Mudar para modo escuro" : "Mudar para modo claro"}
     >
