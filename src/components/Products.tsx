@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Zap, Award, Shield } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import produto1 from "@/assets/produto-1.webp";
 import produto2 from "@/assets/produto-2.webp";
 import produto3 from "@/assets/produto-3.webp";
@@ -109,6 +110,11 @@ const Products = () => {
                 align: "start",
                 loop: true,
               }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }),
+              ]}
               className="w-full"
             >
               <CarouselContent>
