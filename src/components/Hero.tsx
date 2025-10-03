@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Award, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import lampadaAcesa from "@/assets/lampada-acesa.png";
-import lampadaApagada from "@/assets/lampada-apagada.png";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -32,17 +30,45 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
       
-      {/* Lâmpada de fundo que responde ao tema */}
+      {/* Lâmpada SVG animada que responde ao tema */}
       {mounted && (
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-700 bg-gradient-to-br from-background via-background to-primary/5 rounded-full p-8">
-          <img 
-            src={theme === "light" ? lampadaAcesa : lampadaApagada}
-            alt="Lâmpada"
-            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain opacity-70 md:opacity-80 rotate-180 transition-all duration-700 animate-fade-in"
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-700">
+          <svg 
+            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] rotate-180 transition-all duration-700 animate-fade-in"
+            viewBox="0 0 100 100" 
+            xmlns="http://www.w3.org/2000/svg"
             style={{
-              filter: theme === "light" ? "drop-shadow(0 0 100px rgba(250, 204, 21, 0.7))" : ""
+              filter: theme === "light" ? "drop-shadow(0 0 40px rgba(255, 199, 0, 0.7))" : ""
             }}
-          />
+          >
+            {/* Base da lâmpada */}
+            <g className="transition-all duration-500">
+              <rect x="38" y="70" width="24" height="4" rx="1" fill="#b0b0b0"/>
+              <rect x="36" y="74" width="28" height="4" rx="1" fill="#c0c0c0"/>
+              <rect x="38" y="78" width="24" height="4" rx="1" fill="#b0b0b0"/>
+              <rect x="36" y="82" width="28" height="4" rx="1" fill="#c0c0c0"/>
+              <path d="M40 86h20v4a2 2 0 0 1-2 2H42a2 2 0 0 1-2-2v-4z" fill="#444"/>
+            </g>
+            
+            {/* Bulbo da lâmpada */}
+            <g className="transition-all duration-500">
+              <path 
+                d="M50 0 C30 0 20 25 20 45 C20 65 35 70 50 70 C65 70 80 65 80 45 C80 25 70 0 50 0 Z" 
+                fill="rgba(255,255,255,0.1)"
+                className="transition-all duration-500"
+              />
+              <path 
+                d="M45 50 C 48 55, 52 55, 55 50" 
+                stroke={theme === "light" ? "#ffc700" : "#555"}
+                strokeWidth="1.5" 
+                fill="none"
+                className="transition-all duration-500"
+                style={{
+                  filter: theme === "light" ? "drop-shadow(0 0 3px #ffc700)" : ""
+                }}
+              />
+            </g>
+          </svg>
         </div>
       )}
       
