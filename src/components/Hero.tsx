@@ -38,9 +38,9 @@ const Hero = () => {
           <img 
             src={theme === "light" ? lampadaAcesa : lampadaApagada}
             alt="Lâmpada"
-            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain opacity-50 md:opacity-60 rotate-180 transition-all duration-700 animate-fade-in mix-blend-screen"
+            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain opacity-60 md:opacity-70 rotate-180 transition-all duration-700 animate-fade-in"
             style={{
-              filter: theme === "light" ? "drop-shadow(0 0 60px rgba(250, 204, 21, 0.5))" : "none"
+              filter: theme === "light" ? "drop-shadow(0 0 80px rgba(250, 204, 21, 0.6))" : "none"
             }}
           />
         </div>
