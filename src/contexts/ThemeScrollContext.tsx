@@ -44,13 +44,28 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
     checkInitialPosition();
 
     const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      
+      // Reset manual control when reaching the top of the page
+      if (scrollPosition === 0) {
+        if (sessionStorage.getItem("theme-manual-control") === "true") {
+          console.log("Reached top of page, resetting manual control");
+          sessionStorage.removeItem("theme-manual-control");
+          setIsManualControl(false);
+        }
+        // Ensure theme is dark at the top
+        if (theme !== "dark") {
+          setTheme("dark");
+        }
+        return;
+      }
+
       // If user has taken manual control, don't auto-switch
       if (sessionStorage.getItem("theme-manual-control") === "true") {
         console.log("Manual control is active, skipping auto-switch");
         return;
       }
 
-      const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
       
       // Switch to light when scrolling past the "bulb glass" area (around 25% of hero section)
