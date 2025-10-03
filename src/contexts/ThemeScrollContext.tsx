@@ -48,6 +48,7 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
     const handleScroll = () => {
       // If user has taken manual control, don't auto-switch
       if (sessionStorage.getItem("theme-manual-control") === "true") {
+        console.log("Manual control is active, skipping auto-switch");
         return;
       }
 
@@ -58,9 +59,20 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
       const switchPoint = heroHeight * 0.35;
       const buffer = 10; // Small buffer to prevent flickering
 
+      console.log("Scroll debug:", {
+        scrollPosition,
+        heroHeight,
+        switchPoint,
+        currentTheme: theme,
+        shouldSwitchToLight: scrollPosition > switchPoint + buffer && theme === "dark",
+        shouldSwitchToDark: scrollPosition < switchPoint - buffer && theme === "light"
+      });
+
       if (scrollPosition > switchPoint + buffer && theme === "dark") {
+        console.log("Switching to LIGHT theme");
         setTheme("light");
       } else if (scrollPosition < switchPoint - buffer && theme === "light") {
+        console.log("Switching to DARK theme");
         setTheme("dark");
       }
     };
