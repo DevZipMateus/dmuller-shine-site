@@ -39,22 +39,26 @@ const Hero = () => {
           <img 
             src={lampadaApagada}
             alt="Lâmpada Apagada"
-            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500 animate-fade-in"
+            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500 animate-fade-in rotate-180"
             style={{
               opacity: theme === "light" ? 0 : 1,
-              filter: "drop-shadow(0 5px 10px rgba(0,0,0,0.3))"
+              filter: "drop-shadow(0 5px 10px rgba(0,0,0,0.3))",
+              transformOrigin: "center center",
+              backgroundColor: "transparent"
             }}
           />
           {/* Lâmpada acesa */}
           <img 
             src={lampadaAcesa}
             alt="Lâmpada Acesa"
-            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500"
+            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500 rotate-180"
             style={{
               opacity: theme === "light" ? 1 : 0,
               filter: theme === "light"
                 ? "drop-shadow(0 0 15px rgba(255, 200, 0, 0.7)) drop-shadow(0 0 30px rgba(255, 200, 0, 0.5)) drop-shadow(0 0 50px rgba(255, 200, 0, 0.3))"
-                : "drop-shadow(0 5px 10px rgba(0,0,0,0.3))"
+                : "drop-shadow(0 5px 10px rgba(0,0,0,0.3))",
+              transformOrigin: "center center",
+              backgroundColor: "transparent"
             }}
           />
         </div>
