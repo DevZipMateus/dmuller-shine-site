@@ -9,9 +9,9 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <Header />
-      <main>
+      <main className="w-full overflow-x-hidden">
         <Hero />
         <Products />
         <About />

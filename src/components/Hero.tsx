@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
-  return <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden" style={{
+  return <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 overflow-hidden" style={{
     backgroundImage: `url(${theme === "light" ? lampadaAcesa : lampadaApagada})`,
     backgroundSize: 'auto 90%',
     backgroundPosition: 'center center',
@@ -23,16 +23,16 @@ const Hero = () => {
       <div style={{
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       backdropFilter: 'blur(5px)'
-    }} className="relative z-10 text-center px-8 py-10 max-w-4xl mx-auto rounded-2xl bg-[#000a00]/[0.27]">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
+    }} className="relative z-10 text-center px-4 sm:px-8 py-10 max-w-4xl mx-4 sm:mx-auto rounded-2xl bg-[#000a00]/[0.27]">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 text-white break-words">
           D Muller Comércio
         </h1>
         
-        <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-white">
+        <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-white break-words">
           A luz que você procura, a qualidade que você merece
         </p>
 
-        <p className="text-base md:text-lg mb-0 max-w-2xl mx-auto text-white opacity-90">
+        <p className="text-sm sm:text-base md:text-lg mb-0 max-w-2xl mx-auto text-white opacity-90 break-words">
           Desde 2025, proporcionando o que há de melhor em qualidade de iluminação para transformar seus ambientes.
         </p>
       </div>
