@@ -31,6 +31,17 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => {
+                    const element = document.getElementById("produtos");
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-foreground/70 hover:text-primary transition-colors text-sm"
+                >
+                  Produtos
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
                     const element = document.getElementById("sobre");
                     element?.scrollIntoView({ behavior: "smooth" });
                   }}
