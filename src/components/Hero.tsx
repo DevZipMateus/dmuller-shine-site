@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden transition-all duration-700"
+      className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden"
       style={{
         backgroundImage: `url(${theme === "light" ? lampadaAcesa : lampadaApagada})`,
         backgroundSize: 'contain',
