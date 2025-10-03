@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Award, Zap } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import lampadaAcesa from "@/assets/lampada-acesa.png";
+import lampadaApagada from "@/assets/lampada-apagada.png";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -30,95 +32,31 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
       
-      {/* Lâmpada SVG animada que responde ao tema */}
+      {/* Lâmpada PNG animada que responde ao tema */}
       {mounted && (
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-700">
-          <svg 
-            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] rotate-180 transition-all duration-700 animate-fade-in"
-            viewBox="0 0 100 120" 
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none w-[250px] h-[250px] md:w-[350px] md:h-[350px]">
+          {/* Lâmpada apagada */}
+          <img 
+            src={lampadaApagada}
+            alt="Lâmpada Apagada"
+            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500 animate-fade-in"
             style={{
-              filter: theme === "light" 
-                ? "drop-shadow(0 0 10px rgba(255, 199, 0, 0.4)) drop-shadow(0 0 20px rgba(255, 199, 0, 0.3)) drop-shadow(0 0 30px rgba(255, 199, 0, 0.2))"
+              opacity: theme === "light" ? 0 : 1,
+              filter: "drop-shadow(0 5px 10px rgba(0,0,0,0.3))"
+            }}
+          />
+          {/* Lâmpada acesa */}
+          <img 
+            src={lampadaAcesa}
+            alt="Lâmpada Acesa"
+            className="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-500"
+            style={{
+              opacity: theme === "light" ? 1 : 0,
+              filter: theme === "light"
+                ? "drop-shadow(0 0 15px rgba(255, 200, 0, 0.7)) drop-shadow(0 0 30px rgba(255, 200, 0, 0.5)) drop-shadow(0 0 50px rgba(255, 200, 0, 0.3))"
                 : "drop-shadow(0 5px 10px rgba(0,0,0,0.3))"
             }}
-          >
-            {/* Bulbo apagado (modo escuro) */}
-            <g 
-              className="transition-opacity duration-700"
-              style={{ opacity: theme === "light" ? 0 : 1 }}
-            >
-              <path 
-                d="M50 10 C30 10 18 35 18 60 C18 80 30 90 50 90 C70 90 82 80 82 60 C82 35 70 10 50 10 Z" 
-                fill="rgba(25,25,25,0.7)" 
-                stroke="#666" 
-                strokeWidth="0.5"
-              />
-              <path 
-                d="M65 25 C60 20 40 20 35 25 L40 30 C45 25 55 25 60 30 Z" 
-                fill="rgba(255,255,255,0.1)"
-              />
-              <path 
-                d="M70 40 C65 35 45 35 40 40 L45 45 C50 40 60 40 65 45 Z" 
-                fill="rgba(255,255,255,0.05)"
-              />
-            </g>
-
-            {/* Bulbo aceso (modo claro) */}
-            <g 
-              className="transition-opacity duration-700"
-              style={{ opacity: theme === "light" ? 1 : 0 }}
-            >
-              <path 
-                d="M50 10 C30 10 18 35 18 60 C18 80 30 90 50 90 C70 90 82 80 82 60 C82 35 70 10 50 10 Z" 
-                fill="rgba(255,255,255,0.1)" 
-                stroke="#cccccc" 
-                strokeWidth="0.5"
-              />
-              <path 
-                d="M65 25 C60 20 40 20 35 25 L40 30 C45 25 55 25 60 30 Z" 
-                fill="rgba(255,255,255,0.4)"
-              />
-              <path 
-                d="M70 40 C65 35 45 35 40 40 L45 45 C50 40 60 40 65 45 Z" 
-                fill="rgba(255,255,255,0.2)"
-              />
-            </g>
-
-            {/* Filamento */}
-            <g className="transition-all duration-500">
-              <line 
-                x1="50" 
-                y1="65" 
-                x2="50" 
-                y2="72" 
-                stroke="#666" 
-                strokeWidth="0.8"
-                className="transition-all duration-500"
-              />
-              <path 
-                d="M45 72 C48 77, 52 77, 55 72" 
-                stroke={theme === "light" ? "#ffecb3" : "#666"}
-                strokeWidth={theme === "light" ? "2" : "1.5"}
-                fill="none"
-                className="transition-all duration-500"
-                style={{
-                  filter: theme === "light" 
-                    ? "drop-shadow(0 0 5px #ffecb3) drop-shadow(0 0 10px rgba(255,199,0,0.5))" 
-                    : ""
-                }}
-              />
-            </g>
-            
-            {/* Soquete */}
-            <g className="transition-all duration-500">
-              <rect x="38" y="90" width="24" height="4" rx="1" fill="#b0b0b0"/>
-              <rect x="36" y="94" width="28" height="4" rx="1" fill="#c0c0c0"/>
-              <rect x="38" y="98" width="24" height="4" rx="1" fill="#b0b0b0"/>
-              <rect x="36" y="102" width="28" height="4" rx="1" fill="#c0c0c0"/>
-              <path d="M40 106h20v4a2 2 0 0 1-2 2H42a2 2 0 0 1-2-2v-4z" fill="#444"/>
-            </g>
-          </svg>
+          />
         </div>
       )}
       
@@ -130,7 +68,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Main heading - H1 */}
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#ff6b6b] via-[#f39c12] to-[#ffe66d] bg-clip-text text-transparent transition-all duration-700">
               D Muller Comércio
             </span>
           </h1>
