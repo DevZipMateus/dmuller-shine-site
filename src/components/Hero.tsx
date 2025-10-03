@@ -16,7 +16,7 @@ const Hero = () => {
       className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden"
       style={{
         backgroundImage: `url(${theme === "light" ? lampadaAcesa : lampadaApagada})`,
-        backgroundSize: 'contain',
+        backgroundSize: 'auto 90%',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         backgroundColor: theme === "light" ? '#ffffff' : '#000000',
