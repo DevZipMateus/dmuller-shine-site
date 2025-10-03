@@ -19,7 +19,6 @@ const Hero = () => {
         backgroundSize: 'contain',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
         backgroundColor: theme === "light" ? '#ffffff' : '#000000',
       }}
     >
