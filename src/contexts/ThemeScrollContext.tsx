@@ -16,11 +16,9 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setMounted(true);
-    // Check if user has manually controlled the theme
-    const manualControl = sessionStorage.getItem("theme-manual-control");
-    if (manualControl === "true") {
-      setIsManualControl(true);
-    }
+    // Reset manual control on page load to enable auto-switching
+    sessionStorage.removeItem("theme-manual-control");
+    setIsManualControl(false);
   }, []);
 
   useEffect(() => {
@@ -34,7 +32,7 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
 
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
-      const switchPoint = heroHeight * 0.35;
+      const switchPoint = heroHeight * 0.25;
 
       if (scrollPosition > switchPoint && theme === "dark") {
         setTheme("light");
@@ -55,8 +53,8 @@ export const ThemeScrollProvider = ({ children }: { children: ReactNode }) => {
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
       
-      // Switch to light when scrolling past the "bulb glass" area (around 35% of hero section)
-      const switchPoint = heroHeight * 0.35;
+      // Switch to light when scrolling past the "bulb glass" area (around 25% of hero section)
+      const switchPoint = heroHeight * 0.25;
       const buffer = 10; // Small buffer to prevent flickering
 
       console.log("Scroll debug:", {
