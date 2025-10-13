@@ -81,8 +81,10 @@ const products = [
     id: 10,
     name: "Luminária de Embutir (Redonda)",
     image: luminariaEmbutirRedonda,
-    description: "Luminárias LED de 12W a 24W, modelo embutir redondo, luz branca 6500K.",
-    features: [],
+    description: "Luminária de embutir redonda: iluminação eficiente e discreta.",
+    features: [
+      "Luminárias LED de 12W a 24W, modelo embutir redondo, luz branca 6500K."
+    ],
   },
 ];
 
