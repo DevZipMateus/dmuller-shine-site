@@ -84,7 +84,17 @@ const products = [
     image: refletorSuperLed,
     description: "Refletores Super LED de 30W a 1000W, bivolt (100–240V), luz branca 6500K e proteção IP66.",
     features: [
-      "Refletores Super LED de 30W a 1000W, bivolt (100–240V), luz branca 6500K e proteção IP66."
+      "Refletor Super LED 30W 100–240V 6500K IP66",
+      "Refletor Super LED 50W 100–240V 6500K IP66",
+      "Refletor Super LED 100W 100–240V 6500K IP66",
+      "Refletor Super LED 150W 100–240V 6500K IP66",
+      "Refletor Super LED 200W 100–240V 6500K IP66",
+      "Refletor Super LED 300W 100–240V 6500K IP66",
+      "Refletor Super LED 400W 100–240V 6500K IP66",
+      "Refletor Super LED 500W 100–240V 6500K IP66",
+      "Refletor Super LED 600W 100–240V 6500K IP66",
+      "Refletor Super LED 800W 100–240V 6500K IP66",
+      "Refletor Super LED 1000W 100–240V 6500K IP66"
     ],
   },
 ];
