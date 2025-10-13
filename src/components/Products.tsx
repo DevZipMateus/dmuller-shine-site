@@ -82,7 +82,7 @@ const products = [
     id: 9,
     name: "Refletor Super LED",
     image: refletorSuperLed,
-    description: "Refletores LED de alta potência com proteção IP66 para áreas externas",
+    description: "Refletores Super LED de 30W a 1000W, bivolt (100–240V), luz branca 6500K e proteção IP66.",
     features: [
       "Refletor Super LED 30W 100–240V 6500K IP66",
       "Refletor Super LED 50W 100–240V 6500K IP66",
