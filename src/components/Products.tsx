@@ -47,20 +47,6 @@ const products = [
     features: ["IP65", "6.500k", "Garantia: 4 anos"],
   },
   {
-    id: 5,
-    name: "Lâmpada LED 49W 6500K",
-    image: produto5,
-    description: "Lâmpada LED de alta potência com luz branca fria",
-    features: ["49W", "6500K", "100-240V"],
-  },
-  {
-    id: 6,
-    name: "Lâmpada LED 7W 6500K",
-    image: produto6,
-    description: "Lâmpada LED residencial econômica e eficiente",
-    features: ["7W", "6500K", "100-240V"],
-  },
-  {
     id: 7,
     name: "Lâmpada LED",
     image: lampadaLed,
