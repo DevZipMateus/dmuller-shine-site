@@ -93,7 +93,7 @@ const products = [
     image: luminariaSobrepor,
     description: "Luminária de sobrepor redonda: instalação simples e iluminação eficiente.",
     features: [
-      "Luminárias LED de 12W a 24W, modelo sobrepor redondo, luz branca 6500K."
+      "Luminárias LED redondas de sobrepor, 6W a 24W, 6500K."
     ],
   },
 ];
