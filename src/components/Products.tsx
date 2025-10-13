@@ -19,6 +19,7 @@ import lampadaLed from "@/assets/lampada-led.png";
 import lampadaSuperLed from "@/assets/lampada-super-led.png";
 import refletorSuperLed from "@/assets/refletor-super-led.png";
 import refletorLed from "@/assets/refletor-led.png";
+import luminariaEmbutirRedonda from "@/assets/luminaria-embutir-redonda.png";
 
 const products = [
   {
@@ -75,6 +76,13 @@ const products = [
     features: [
       "Refletores Super LED de 30W a 1000W, bivolt (100–240V), luz branca 6500K e proteção IP66."
     ],
+  },
+  {
+    id: 10,
+    name: "Luminária embutir redonda",
+    image: luminariaEmbutirRedonda,
+    description: "Luminárias LED de 12W a 24W, modelo embutir redondo, luz branca 6500K.",
+    features: [],
   },
 ];
 
