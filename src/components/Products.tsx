@@ -23,6 +23,7 @@ import luminariaEmbutirRedonda from "@/assets/luminaria-embutir-redonda.png";
 import luminariaSobrepor from "@/assets/luminaria-sobrepor-redonda.png";
 import luminariaEmbutirQuadrada from "@/assets/luminaria-embutir-quadrada.png";
 import luminariaSobreporQuadrada from "@/assets/luminaria-sobrepor-quadrada.png";
+import luminariaEmbutirLinhaBlack from "@/assets/luminaria-embutir-linha-black.png";
 
 const products = [
   {
@@ -114,6 +115,15 @@ const products = [
     description: "Luminária de sobrepor quadrada: design sofisticado com iluminação eficiente.",
     features: [
       "Luminárias LED quadradas de sobrepor, de 12W a 45W, com temperaturas de cor de 3000K, 4000K e 6500K, 100~240V."
+    ],
+  },
+  {
+    id: 14,
+    name: "Luminária de Embutir Linha Black",
+    image: luminariaEmbutirLinhaBlack,
+    description: "Luminária de Embutir Linha Black: Elegância e desempenho em iluminação.",
+    features: [
+      "Luminárias LED redondas embutir, de 12W a 24W, 6500K."
     ],
   },
 ];
