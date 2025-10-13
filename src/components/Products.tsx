@@ -20,6 +20,7 @@ import lampadaSuperLed from "@/assets/lampada-super-led.png";
 import refletorSuperLed from "@/assets/refletor-super-led.png";
 import refletorLed from "@/assets/refletor-led.png";
 import luminariaEmbutirRedonda from "@/assets/luminaria-embutir-redonda.png";
+import luminariaSobrepor from "@/assets/luminaria-sobrepor-redonda.png";
 
 const products = [
   {
@@ -84,6 +85,15 @@ const products = [
     description: "Luminária de embutir redonda: iluminação eficiente e discreta.",
     features: [
       "Luminárias LED de 12W a 24W, modelo embutir redondo, luz branca 6500K."
+    ],
+  },
+  {
+    id: 11,
+    name: "Luminária de Sobrepor (Redonda)",
+    image: luminariaSobrepor,
+    description: "Luminária de sobrepor redonda: instalação simples e iluminação eficiente.",
+    features: [
+      "Luminárias LED de 12W a 24W, modelo sobrepor redondo, luz branca 6500K."
     ],
   },
 ];
