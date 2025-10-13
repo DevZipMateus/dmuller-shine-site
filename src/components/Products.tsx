@@ -18,6 +18,7 @@ import produto6 from "@/assets/produto-6.png";
 import lampadaLed from "@/assets/lampada-led.png";
 import lampadaSuperLed from "@/assets/lampada-super-led.png";
 import refletorSuperLed from "@/assets/refletor-super-led.png";
+import refletorLed from "@/assets/refletor-led.png";
 
 const products = [
   {
@@ -77,6 +78,13 @@ const products = [
       "Lâmpada Super LED 100W 100–240V 6500K E40",
       "Lâmpada Super LED 150W 100–240V 6500K E40"
     ],
+  },
+  {
+    id: 9,
+    name: "Refletor Super Led",
+    image: refletorLed,
+    description: "Refletores Super LED de 30W a 1000W, bivolt (100–240V), luz branca 6500K e proteção IP66.",
+    features: [],
   },
 ];
 
