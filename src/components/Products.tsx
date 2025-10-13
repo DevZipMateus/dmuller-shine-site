@@ -16,6 +16,7 @@ import produto4 from "@/assets/produto-4.webp";
 import produto5 from "@/assets/produto-5.png";
 import produto6 from "@/assets/produto-6.png";
 import lampadaLed from "@/assets/lampada-led.png";
+import lampadaSuperLed from "@/assets/lampada-super-led.png";
 
 const products = [
   {
@@ -58,6 +59,22 @@ const products = [
       "Lâmpada led 9w 100-240v 6500k",
       "Lâmpada led 12w 100-240v 6500k",
       "Lâmpada led 15w 100-240v 6500k"
+    ],
+  },
+  {
+    id: 8,
+    name: "Lâmpada Super Led",
+    image: lampadaSuperLed,
+    description: "Lâmpadas Super LED de alta potência para ambientes que exigem maior iluminação",
+    features: [
+      "Lâmpada Super LED 20W 100–240V 6500K",
+      "Lâmpada Super LED 30W 100–240V 6500K",
+      "Lâmpada Super LED 40W 100–240V 6500K",
+      "Lâmpada Super LED 50W 100–240V 6500K",
+      "Lâmpada Super LED 65W 100–240V 6500K",
+      "Lâmpada Super LED 75W 100–240V 6500K",
+      "Lâmpada Super LED 100W 100–240V 6500K E40",
+      "Lâmpada Super LED 150W 100–240V 6500K E40"
     ],
   },
 ];
