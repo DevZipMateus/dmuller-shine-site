@@ -17,6 +17,7 @@ import produto5 from "@/assets/produto-5.png";
 import produto6 from "@/assets/produto-6.png";
 import lampadaLed from "@/assets/lampada-led.png";
 import lampadaSuperLed from "@/assets/lampada-super-led.png";
+import refletorSuperLed from "@/assets/refletor-super-led.png";
 
 const products = [
   {
@@ -75,6 +76,25 @@ const products = [
       "Lâmpada Super LED 75W 100–240V 6500K",
       "Lâmpada Super LED 100W 100–240V 6500K E40",
       "Lâmpada Super LED 150W 100–240V 6500K E40"
+    ],
+  },
+  {
+    id: 9,
+    name: "Refletor Super LED",
+    image: refletorSuperLed,
+    description: "Refletores LED de alta potência com proteção IP66 para áreas externas",
+    features: [
+      "Refletor Super LED 30W 100–240V 6500K IP66",
+      "Refletor Super LED 50W 100–240V 6500K IP66",
+      "Refletor Super LED 100W 100–240V 6500K IP66",
+      "Refletor Super LED 150W 100–240V 6500K IP66",
+      "Refletor Super LED 200W 100–240V 6500K IP66",
+      "Refletor Super LED 300W 100–240V 6500K IP66",
+      "Refletor Super LED 400W 100–240V 6500K IP66",
+      "Refletor Super LED 500W 100–240V 6500K IP66",
+      "Refletor Super LED 600W 100–240V 6500K IP66",
+      "Refletor Super LED 800W 100–240V 6500K IP66",
+      "Refletor Super LED 1000W 100–240V 6500K IP66"
     ],
   },
 ];
