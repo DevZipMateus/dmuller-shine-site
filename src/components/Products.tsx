@@ -15,6 +15,7 @@ import produto3 from "@/assets/produto-3.webp";
 import produto4 from "@/assets/produto-4.webp";
 import produto5 from "@/assets/produto-5.png";
 import produto6 from "@/assets/produto-6.png";
+import lampadaLed from "@/assets/lampada-led.png";
 
 const products = [
   {
@@ -58,6 +59,20 @@ const products = [
     image: produto6,
     description: "Lâmpada LED residencial econômica e eficiente",
     features: ["7W", "6500K", "100-240V"],
+  },
+  {
+    id: 7,
+    name: "Lâmpada LED",
+    image: lampadaLed,
+    description: "Linha completa de lâmpadas LED com alta eficiência energética",
+    features: [
+      "LAMPADA LED 4,9W 100-240V 6500K",
+      "LAMPADA LED 7W 100-240V 6500K",
+      "LAMPADA LED 9W 100-240V 3000K",
+      "LAMPADA LED 9W 100-240V 6500K",
+      "LAMPADA LED 12W 100-240V 6500K",
+      "LAMPADA LED 15W 100-240V 6500K"
+    ],
   },
 ];
 
