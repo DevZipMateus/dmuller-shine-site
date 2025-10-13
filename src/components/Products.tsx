@@ -52,12 +52,12 @@ const products = [
     image: lampadaLed,
     description: "Linha completa de lâmpadas LED com alta eficiência energética",
     features: [
-      "LAMPADA LED 4,9W 100-240V 6500K",
-      "LAMPADA LED 7W 100-240V 6500K",
-      "LAMPADA LED 9W 100-240V 3000K",
-      "LAMPADA LED 9W 100-240V 6500K",
-      "LAMPADA LED 12W 100-240V 6500K",
-      "LAMPADA LED 15W 100-240V 6500K"
+      "Lâmpada led 4,9w 100-240v 6500k",
+      "Lâmpada led 7w 100-240v 6500k",
+      "Lâmpada led 9w 100-240v 3000k",
+      "Lâmpada led 9w 100-240v 6500k",
+      "Lâmpada led 12w 100-240v 6500k",
+      "Lâmpada led 15w 100-240v 6500k"
     ],
   },
 ];
