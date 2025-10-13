@@ -64,14 +64,7 @@ const products = [
     image: lampadaSuperLed,
     description: "Lâmpadas Super LED de alta potência para ambientes que exigem maior iluminação",
     features: [
-      "Lâmpada Super LED 20W 100–240V 6500K",
-      "Lâmpada Super LED 30W 100–240V 6500K",
-      "Lâmpada Super LED 40W 100–240V 6500K",
-      "Lâmpada Super LED 50W 100–240V 6500K",
-      "Lâmpada Super LED 65W 100–240V 6500K",
-      "Lâmpada Super LED 75W 100–240V 6500K",
-      "Lâmpada Super LED 100W 100–240V 6500K E40",
-      "Lâmpada Super LED 150W 100–240V 6500K E40"
+      "Lâmpadas Super LED de 20W a 150W, bivolt (100–240V), luz branca 6500K, com soquete E40 nas potências mais altas."
     ],
   },
   {
