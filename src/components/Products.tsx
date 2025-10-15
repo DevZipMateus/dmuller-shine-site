@@ -149,7 +149,7 @@ const products = [
   },
   {
     id: 17,
-    name: "Luminária de Sobrepor Black",
+    name: "Luminária de Embutir Black",
     image: luminariaSobreporBlackEmbutir,
     description: "Luminária de Embutir Linha Black: Elegância e desempenho em iluminação.",
     features: [
