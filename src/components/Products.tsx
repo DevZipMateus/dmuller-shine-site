@@ -143,7 +143,7 @@ const products = [
     image: luminariaSobreporBlackQuadrada,
     description: "Luminária de Embutir Linha Black: Elegância e desempenho em iluminação.",
     features: [
-      "Luminárias LED de embutir quadradas disponíveis em 12W, 18W e 24W, com temperatura de cor de 6500K (luz branca fria)."
+      "Luminárias LED de sobrepor quadradas nas potências de 12W, 18W e 24W, com luz branca fria de 6500K."
     ],
   },
 ];
